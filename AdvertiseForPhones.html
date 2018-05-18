@@ -1,0 +1,69 @@
+<style>
+.fixed {
+width: 99%;
+height:102px;
+border: 1px dotted blue;
+color: blue;
+position:fixed;
+margin:auto;
+bottom:0px;
+display:none
+}
+h1 {
+	font-size:30px;
+	text-align:center;
+}
+p {
+	font-size:25px;
+	text-align:center;
+}
+</style>
+
+<div id='mob_adv1' class = 'fixed'><script>document.write('<p>Hi, World</p>');</script></div>
+<div id='mob_adv2' class = 'fixed'><script>document.write('<p>Hi, Alex</p>');</script></div>
+<div id='mob_adv3' class = 'fixed'><script>document.write('<p>Hi, Anna</p>');</script></div>
+<div id='mob_adv4' class = 'fixed'><script>document.write('<p>Hi, Platosha</p>');</script></div>
+
+
+<script>
+var i = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+var sh = document.getElementById('mob_adv' + i); 
+sh.style = 'display:block;';
+
+function autoSlider() {
+	switch(i) {
+		case 1: {
+		sh.style = 'display:none;';
+		sh = document.getElementById('mob_adv1'); 
+		sh.style = 'display:block;'; 
+		break
+		}
+		case 2: {
+		sh.style = 'display:none;';
+		sh = document.getElementById('mob_adv2'); 
+		sh.style = 'display:block;'; 
+		break
+		}
+		case 3: {
+		sh.style = 'display:none;';
+		sh = document.getElementById('mob_adv3'); 
+		sh.style = 'display:block;'; 
+		break
+		}
+		case 4: {
+		sh.style = 'display:none;';
+		sh = document.getElementById('mob_adv4'); 
+		sh.style = 'display:block;'; 
+		break
+		}
+	}
+	i +=1;
+	if (i == 5) i = 1;
+}
+
+autoSlider;
+
+setInterval(autoSlider, 2000);
+
+
+</script>
