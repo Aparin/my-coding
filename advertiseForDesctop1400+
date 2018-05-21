@@ -1,0 +1,40 @@
+<!-- Desktop 1400+ 
+Выводит блок 160*600 после прокрутки на 700 пикселей -->
+<style>
+#elem {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    width: 160px;
+    height: 600px;
+
+    display:none;
+    /* 
+        background: yellow;
+        border: 1px dotted blue;
+      */
+}
+
+</style>
+
+<div id="elem">
+<!-- здесь рекламный блок -->
+</div>
+
+<script>
+var doc_w = $(document).width();
+if (doc_w >= 1400) {
+
+  $(window).scroll(function(){
+  if($(window).scrollTop()>700){
+  $('#elem').show()
+  }
+  })
+  
+  $(window).scroll(function(){
+  if($(window).scrollTop()<700){
+  $('#elem').hide()
+  }
+  })
+}
+</script>
