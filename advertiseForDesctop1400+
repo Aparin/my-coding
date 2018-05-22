@@ -1,40 +1,54 @@
 <!-- Desktop 1400+ 
-Выводит блок 160*600 после прокрутки на 700 пикселей -->
-<style>
-#elem {
+Выводит блок 160*600 после прокрутки на 700 пикселей --><style>
+#leftBlock {
     position: fixed;
     top: 50px;
     left: 20px;
     width: 160px;
     height: 600px;
-
+    background: yellow;
     display:none;
-    /* 
-        background: yellow;
-        border: 1px dotted blue;
-      */
+    border: 3px dotted blue;
 }
 
+#closeAdvLeft {
+	background-color: darkblue; border: 2px solid #ccc; 
+	height: 26px; line-height: normal; position: absolute; 
+	right: 1px; cursor: pointer; text-align: center; 
+	text-decoration: none; color: rgba(255, 255, 255, 1); 
+	font-size: 22px; text-shadow: 0 -1px rgba(0, 0, 0, 1); 
+	top: 1px; width: 26px; -webkit-border-radius: 26px; 
+	-moz-border-radius: 26px; -ms-border-radius: 26px; 
+	-o-border-radius: 26px; border-radius: 26px; 
+	-moz-box-shadow: 1px 1px 2px #000; 
+	-webkit-box-shadow: 1px 1px 2px #000; 
+	box-shadow: 1px 1px 2px #000; display:none;
+}
 </style>
 
-<div id="elem">
-<!-- здесь рекламный блок -->
+<div id="leftBlock">
+лалала
+<a id="closeAdvLeft" title="Закрыть">X</a> 
 </div>
 
 <script>
 var doc_w = $(document).width();
+var flag = 0;
+
 if (doc_w >= 1400) {
 
-  $(window).scroll(function(){
-  if($(window).scrollTop()>700){
-  $('#elem').show()
+$(window).scroll(function(){
+  if($(window).scrollTop()>700 && flag == 0){
+  $('#leftBlock').show(1500)
+  setTimeout(function() { $('#closeAdvLeft').show(1500) }, 3000);
   }
+  })
+
+$('#closeAdvLeft').click(function(event) {
+  $('#leftBlock').hide(1000)
+  flag = 1;
   })
   
-  $(window).scroll(function(){
-  if($(window).scrollTop()<700){
-  $('#elem').hide()
-  }
-  })
 }
+  
 </script>
