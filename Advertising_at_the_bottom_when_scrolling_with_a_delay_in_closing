@@ -1,46 +1,38 @@
-<!-- Появляется при прокрутке вниз, крестик закрытия появляется с задержкой -->
+	<!-- Появляется при прокрутке вниз, крестик закрытия появляется с задержкой -->
 <style>
 #bottomAdv {
-    position: fixed;
-    bottom: 10px;
-    /* margin:0 auto;
-	max-width: 1000px;
-    height: 250px; */
-	margin:0 5% 0 5%;
-	width:90%;
-
-    display:none; 
-    background: yellow;
-    border: 1px dotted blue;
+  position: fixed;
+  bottom: 10px;
+  left:5%;
+  right:5%;
+  display:none; 
+  background: yellow;
+  border: 1px dotted blue;
 }
 
 #closeAdv {
-	background-color: darkblue; border: 2px solid #ccc; height: 13px; line-height: 13px; position: absolute; right: 2px; cursor: pointer; text-align: center; text-decoration: none; color: rgba(255, 255, 255, 0.9); font-size: 12px; text-shadow: 0 -1px rgba(0, 0, 0, 0.9); top: 2px; width: 13px; -webkit-border-radius: 13px; -moz-border-radius: 13px; -ms-border-radius: 13px; -o-border-radius: 13px; border-radius: 13px; -moz-box-shadow: 1px 1px 2px #000; -webkit-box-shadow: 1px 1px 2px #000; box-shadow: 1px 1px 2px #000; display:none;
+	background-color: darkblue; border: 2px solid #ccc; height: 25px; line-height: 22px; position: absolute; right: 1px; cursor: pointer; text-align: center; text-decoration: none; color: rgba(255, 255, 255, 1); font-size: 18px; text-shadow: 0 -1px rgba(0, 0, 0, 1); top: -13px; width: 25px; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; -o-border-radius: 25px; border-radius: 25px; -moz-box-shadow: 1px 1px 2px #000; -webkit-box-shadow: 1px 1px 2px #000; box-shadow: 1px 1px 2px #000; display:none;
 }
 
 </style>
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js "></script>
+
 <div id="bottomAdv">
 <!-- здесь рекламный блок -->
-<p>Лалала</p>
+<p>здесь рекламный блок</p>
+<p>здесь рекламный блок</p>
 
-<a id="closeAdv" title="Закрыть" onclick="document.getElementById('bottomAdv').style.display='none'; flag = 1;
-">x</a></div>
+<a id="closeAdv" title="Закрыть" onclick="document.getElementById('bottomAdv').style.display='none'; flag =1;">X</a> 
 </div>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js "></script>
 <script>
-for (var i=1; i < 1000; i +=1) {
-document.write('some text ' + i +' <br>')};
-	
 var flag = 0;
-
 
 $(window).scroll(function(){
 	if($(window).scrollTop()>300 && flag == 0){
 	$('#bottomAdv').show()
-	setTimeout(function() { $('#closeAdv').show() }, 5000);
+	setTimeout(function() { $('#closeAdv').show() }, 3000);
 	}
 })
-	//$('#closeAdv').fadeIn(10000); // fadeIn - плавное появление
   
 </script>
