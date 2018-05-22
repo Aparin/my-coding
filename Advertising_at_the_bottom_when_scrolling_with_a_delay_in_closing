@@ -1,4 +1,5 @@
-	<!-- Появляется при прокрутке вниз, крестик закрытия появляется с задержкой -->
+<!-- Появляется при прокрутке вниз, крестик закрытия появляется с задержкой. Добавил вывод случайного блока рекламы (из 2-х)
+Формула для диапазона: Math.floor(Math.random() * (max - min + 1)) + min; -->
 <style>
 #bottomAdv {
   position: fixed;
@@ -11,27 +12,25 @@
 }
 
 #closeAdv {
-	background-color: darkblue; border: 2px solid #ccc; height: 25px; 
-	line-height: 22px; position: absolute; right: 1px; cursor: pointer; 
-	text-align: center; text-decoration: none; color: rgba(255, 255, 255, 1); 
-	font-size: 18px; text-shadow: 0 -1px rgba(0, 0, 0, 1); top: -13px; width: 25px; 
-	-webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; 
-	-o-border-radius: 25px; border-radius: 25px; -moz-box-shadow: 1px 1px 2px #000; 
-	-webkit-box-shadow: 1px 1px 2px #000; box-shadow: 1px 1px 2px #000; display:none;
+	background-color: darkblue; border: 2px solid #ccc; height: 25px; line-height: 22px; position: absolute; right: 1px; cursor: pointer; text-align: center; text-decoration: none; color: rgba(255, 255, 255, 1); font-size: 18px; text-shadow: 0 -1px rgba(0, 0, 0, 1); top: -13px; width: 25px; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; -o-border-radius: 25px; border-radius: 25px; -moz-box-shadow: 1px 1px 2px #000; -webkit-box-shadow: 1px 1px 2px #000; box-shadow: 1px 1px 2px #000; display:none;
 }
 
 </style>
 
 <div id="bottomAdv">
-<!-- здесь рекламный блок -->
-<p>здесь рекламный блок</p>
-<p>здесь рекламный блок</p>
+
+<div id='adv1' style = "display:none"><p>Рекламный блок №1</p></div>
+<div id='adv2' style = "display:none"><p>Рекламный блок №2</p></div>
 
 <a id="closeAdv" title="Закрыть" onclick="document.getElementById('bottomAdv').style.display='none'; flag =1;">X</a> 
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js "></script>
 <script>
+var i = Math.floor(Math.random() * (2)) + 1;
+var sh = document.getElementById('adv' + i); 
+sh.style = 'display:block;';
+
 var flag = 0;
 
 $(window).scroll(function(){
