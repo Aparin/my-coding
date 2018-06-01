@@ -40,7 +40,7 @@
 <a id="closeAdv" title="Закрыть" onclick="document.getElementById('bottomAdv').style.display='none'; flag =1;">X</a> 
 </div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js "></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js "></script>
 <script>
 var i = Math.floor(Math.random() * (2)) + 1;
 var sh = document.getElementById('adv' + i); 
